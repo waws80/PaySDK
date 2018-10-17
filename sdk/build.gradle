@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.6'
+    implementation files('libs/alipaySdk-20180601.jar')
+}
+
+uploadArchives {
+//    repositories.mavenDeployer {
+//        //http://localhost:8081/repository/paysdk/
+//        //http://192.168.0.210:8081/repository/3rd_part/
+//        repository(url: "http://localhost:8081/repository/paysdk/") {
+//            authentication(userName: "admin", password: "admin123")
+//        }
+//        pom.version = "0.0.8"
+//        pom.artifactId = "payLib"
+//        pom.groupId = "com.devote"
+//    }
+}
