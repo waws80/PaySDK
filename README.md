@@ -10,7 +10,7 @@
         /**
          * 初始化支付工具类
          */
-        PaySDK.init(this,"3216sd876868ds67",true);
+        PaySDK.init(this,"wx_appid",true);
     }
 
 ### 2.使用
