@@ -2,7 +2,6 @@ package top.waws.paysdk.util;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
@@ -37,7 +36,8 @@ public class WXAPIEventHandler implements IWXAPIEventHandler {
      * 绑定activity
      * @param activity 吊起支付的活动页面
      */
-    public void attachActivity(@NonNull Activity activity){
+    public void attachActivity(Activity activity){
+        if (activity == null) return;
         activityWeakReference = new WeakReference<>(activity);
         if(PaySDK.getWXAPI() != null && activityWeakReference != null && activityWeakReference.get() != null) {
             PaySDK.getWXAPI().handleIntent(activityWeakReference.get().getIntent(), this);
@@ -53,6 +53,7 @@ public class WXAPIEventHandler implements IWXAPIEventHandler {
      * @param intent
      */
     public void attachNewIntent(Intent intent){
+        if (intent == null) return;
         if (activityWeakReference != null && activityWeakReference.get() != null){
             activityWeakReference.get().setIntent(intent);
             if(PaySDK.getWXAPI() != null) {
