@@ -1,6 +1,5 @@
 package top.waws.paysdk.util;
 
-import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.widget.Toast;
 
@@ -19,11 +18,13 @@ public class PayErrorUtil {
     private static final Toast sToast = new Toast(PaySDK.getContext());
 
 
-    public static void showMsg(@NonNull CharSequence s){
+    public static void showMsg(CharSequence s){
+        if (s == null) return;
         showMsg(s,Gravity.BOTTOM);
     }
 
-    public static void showMsg(@NonNull CharSequence s, int gravity){
+    public static void showMsg(CharSequence s, int gravity){
+        if (s == null) return;
         sToast.setGravity(gravity,0,0);
         sToast.setText(s);
         sToast.setDuration(Toast.LENGTH_SHORT);
