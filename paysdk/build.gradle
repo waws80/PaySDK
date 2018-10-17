@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
 
 android {
 
@@ -37,15 +36,8 @@ dependencies {
     implementation files('libs/alipaySdk-20180601.jar')
 }
 
-uploadArchives {
-//    repositories.mavenDeployer {
-//        //http://localhost:8081/repository/paysdk/
-//        //http://192.168.0.210:8081/repository/3rd_part/
-//        repository(url: "http://localhost:8081/repository/paysdk/") {
-//            authentication(userName: "admin", password: "admin123")
-//        }
-//        pom.version = "0.0.8"
-//        pom.artifactId = "payLib"
-//        pom.groupId = "com.devote"
-//    }
-}
+
+
+
+
+
