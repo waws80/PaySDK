@@ -12,7 +12,7 @@
 	}
     
     dependencies {
-	        implementation 'com.github.waws80:PaySDK:1.5.0'
+	        implementation 'com.github.waws80:PaySDK:1.6.0'
 	}
 ### 1. 初始化
 
