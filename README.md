@@ -1,7 +1,19 @@
 # PaySDK
 支付工具类（微信支付、支付宝支付和支付宝授权登录）
+[![](https://jitpack.io/v/waws80/PaySDK.svg)](https://jitpack.io/#waws80/PaySDK)
 
 ## 使用
+
+    allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+    
+    dependencies {
+	        implementation 'com.github.waws80:PaySDK:1.5.0'
+	}
 ### 1. 初始化
 
     @Override
