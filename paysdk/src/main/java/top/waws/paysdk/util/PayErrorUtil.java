@@ -15,7 +15,7 @@ import top.waws.paysdk.callback.*;
  */
 public class PayErrorUtil {
 
-    private static final Toast sToast = new Toast(PaySDK.getContext());
+    private static Toast sToast = null;
 
 
     public static void showMsg(CharSequence s){
@@ -25,9 +25,12 @@ public class PayErrorUtil {
 
     public static void showMsg(CharSequence s, int gravity){
         if (s == null) return;
-        sToast.setGravity(gravity,0,0);
-        sToast.setText(s);
-        sToast.setDuration(Toast.LENGTH_SHORT);
+        if (sToast == null){
+            sToast = Toast.makeText(PaySDK.getContext(),s,Toast.LENGTH_SHORT);
+            sToast.setGravity(gravity,0,0);
+        }else {
+            sToast.setText(s);
+        }
         sToast.show();
     }
 
